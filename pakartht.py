@@ -3,30 +3,30 @@ rules_penyakit = {
     "Diare Infeksi" : {"G1", "G2", "G3", "G4"},
     "Keracunan Makanan" : {"G1", "G2", "G5", "G6"},
     "Intoleransi Laktosa" : {"G1", "G7", "G8", "G9"},
-    "Irritable Bowel Syndrome (IBS)" : {"G1", "G3", "G7", "G10"},
-    "Gastroenteritis (Flu Perut)" : {"G1", "G2", "G3", "G11"}
+    "Irritable Bowel Syndrome" : {"G1", "G3", "G7", "G10"},
+    "Gastroenteritis" : {"G1", "G2", "G3", "G11"}
 }
 
 # kode gejala
 list_gejala = {
-    "G1" : "BAB cair",
-    "G2" : "Mual atau muntah",
-    "G3" : "Demam",
-    "G4" : "Diare lebih dari 3 hari",
-    "G5" : "Gejala muncul cepat setelah makan",
-    "G6" : "Makan makanan yang mencurigakan",
-    "G7" : "Perut kembung",
-    "G8" : "Sering buang gas",
-    "G9" : "Gejala setelah minum susu",
-    "G10" : "Gejala dipicu stres atau kambuhan",
-    "G11" : "Badan lemas"
+    "G1" : "mengalami BAB cair",
+    "G2" : "mengalami Mual atau muntah",
+    "G3" : "mengalami Demam",
+    "G4" : "mengalami Diare lebih dari 3 hari",
+    "G5" : "mengalami gejala yang muncul setelah makan",
+    "G6" : "makan makanan yang mencurigakan",
+    "G7" : "mengalami perut kembung",
+    "G8" : "sering buang gas",
+    "G9" : "mengalami gejala setelah konsumsi olahan susu",
+    "G10" : "sedang Stres",
+    "G11" : "mengalami badan lemas"
 }
 
 gejala = []
 
-def tanya_gejala(kode_gejala, nama_gejala):
+def tanya_gejala(kode_gejala, detail_gejala):
     while True:
-        jawaban = input(f"Apakah anda mengalami {nama_gejala}? (y/t): ").lower()
+        jawaban = input(f"Apakah anda {detail_gejala}? (y/t): ").lower()
         if jawaban in ['y', 't']:
             break
         else:
