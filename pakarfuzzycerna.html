@@ -2,12 +2,12 @@
 <html lang="eng">
 <head>
     <meta charset="UTF-8">
-    <title>Sistem Diagnosa Pencernaan (Fuzzy Logic)</title>
+    <title>Sistem Diagnosa Pencernaan</title>
 </head>
 <body>
 
-    <h2>Sistem Diagnosa Gangguan Pencernaan (Fuzzy Logic)</h2>
-    <p>Jawablah pertanyaan berikut dengan angka yang sesuai.</p>
+    <h2>Sistem Diagnosa Gangguan Pencernaan</h2>
+    <p>Jawablah pertanyaan berikut dengan angka yang sesuai. Isi dengan 0 jika tidak mengalami. Gunakan tombol keyboard TAB untuk isi dengan cepat.</p>
 
     <form id="formDiagnosa">
         <label>1. Berapa kali Anda BAB cair hari ini? (0-15):</label><br>
@@ -16,7 +16,7 @@
         <label>2. Seberapa parah mual/muntah Anda? (Skala 0-10):</label><br>
         <input type="number" id="g2" min="0" max="10" value="0" required><br><br>
 
-        <label>3. Berapa suhu tubuh Anda saat ini? (Celcius, misal 37.5):</label><br>
+        <label>3. Berapa suhu tubuh Anda saat ini? (normal sekitar 36,5)(Celcius, misal 37.5):</label><br>
         <input type="number" id="g3" min="36.0" max="41.0" step="0.1" value="36.5" required><br><br>
 
         <label>4. Sudah berapa hari Anda mengalami diare? (0-14):</label><br>
@@ -43,7 +43,7 @@
         <label>11. Seberapa lemas badan Anda? (Skala 0-10):</label><br>
         <input type="number" id="g11" min="0" max="10" value="0" required><br><br>
 
-        <button type="button" onclick="prosesDiagnosa()">Proses Diagnosa</button>
+        <button type="button" onclick="prosesDiagnosa(); scrollToBottom();">Proses Diagnosa</button>
     </form>
 
     <h3 id="judulHasil" style="display:none;">HASIL DIAGNOSA</h3>
@@ -166,6 +166,14 @@
                 divHasil.innerHTML = "<p>Gejala terlalu ringan atau tidak ada aturan pakar yang cocok.</p>";
             }
         }
+
+        // Fungsi scroll ke bawah
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+            }
     </script>
 
 </body>
