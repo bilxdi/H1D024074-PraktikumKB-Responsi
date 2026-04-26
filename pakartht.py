@@ -1,13 +1,17 @@
-# data penyakit dan gejalanya
+# Data penyakit dan gejala (lebih lengkap)
 rules_penyakit = {
-    "Diare Infeksi" : {"G1", "G2", "G3", "G4"},
+    "Diare Infeksi (Bakteri/Virus)" : {"G1", "G2", "G3", "G4"},
     "Keracunan Makanan" : {"G1", "G2", "G5", "G6"},
     "Intoleransi Laktosa" : {"G1", "G7", "G8", "G9"},
-    "Irritable Bowel Syndrome" : {"G1", "G3", "G7", "G10"},
-    "Gastroenteritis" : {"G1", "G2", "G3", "G11"}
+    "Irritable Bowel Syndrome (IBS)" : {"G1", "G3", "G7", "G10"},
+    "Gastroenteritis" : {"G1", "G2", "G3", "G11"},
+    "Celiac (Intoleransi Gluten)" : {"G1", "G7", "G12", "G13"},
+    "Inflammatory Bowel Disease (IBD)" : {"G1", "G3", "G14", "G15"},
+    "Infeksi Parasit" : {"G1", "G7", "G16"},
+    "Efek samping obat" : {"G1", "G2", "G7", "G17"}
 }
 
-# kode gejala
+# Kode gejala
 list_gejala = {
     "G1" : "mengalami BAB cair",
     "G2" : "mengalami Mual atau muntah",
@@ -19,11 +23,18 @@ list_gejala = {
     "G8" : "sering buang gas",
     "G9" : "mengalami gejala setelah konsumsi olahan susu",
     "G10" : "sedang Stres",
-    "G11" : "mengalami badan lemas"
+    "G11" : "mengalami badan lemas",
+    "G12" : "mengalami tinja berminyak atau penurunan berat badan",
+    "G13" : "mengalami kelelahan atau anemia",
+    "G14" : "mengalami diare berdarah",
+    "G15" : "nyeri perut berkepanjangan",
+    "G16" : "penurunan berat badan perlahan",
+    "G17" : "mengalami diare setelah minum obat"
 }
 
 gejala = []
 
+# Fungsi menanyakan gejala
 def tanya_gejala(kode_gejala, detail_gejala):
     while True:
         jawaban = input(f"Apakah anda {detail_gejala}? (y/t): ").lower()
@@ -35,6 +46,7 @@ def tanya_gejala(kode_gejala, detail_gejala):
     if jawaban == 'y':
         gejala.append(kode_gejala)
 
+# Fungsi diagnosa berdasarkan gejala
 def diagnosa_gejala(input_gejala):
     hasil_diagnosa = []
 
@@ -47,6 +59,7 @@ def diagnosa_gejala(input_gejala):
     hasil_diagnosa.sort(key=lambda x: x[1], reverse=True)
     return hasil_diagnosa
 
+# Program utama
 print("=== SISTEM DIAGNOSA GANGGUAN PENCERNAAN ===")
 print("Jawablah dengan 'y' atau 't'\n")
 
@@ -58,7 +71,7 @@ if not gejala:
 else:
     hasil = diagnosa_gejala(gejala)
 
-    print("\nHasil Diagnosa:")
+    print("\nHasil Diagnosa (top 3 kemungkinan):")
     for penyakit, persen in hasil[:3]:
         if persen >= 25:
             print(f"- {penyakit}: {persen:.2f}%")
