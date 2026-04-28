@@ -1,9 +1,9 @@
 # H1D024074-PraktikumKB-Responsi
-<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
+<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
 
 ## 1. Fungsi Membership Fuzzy
 ```js
-// 1. FUNGSI MEMBERSHIP FUZZY (Matematika Dasar)
+// 1. Fungsi Membership Fuzzy
 // Fungsi Segitiga (Trimf)
 function trimf(x, a, b, c) {
     if (x <= a || x >= c) return 0;
@@ -11,12 +11,14 @@ function trimf(x, a, b, c) {
     if (x > b && x < c) return (c - x) / (c - b);
     return 0;
 }
+```
 
+```js
 // Fungsi Trapesium (Trapmf)
 function trapmf(x, a, b, c, d) {
-    if (x <= a || x >= d) return 0;
-    if (x > a && x <= b) return (x - a) / (b - a);
-    if (x > b && x <= c) return 1;
+    if (x < a || x > d) return 0;
+    if (x >= b && x <= c) return 1;
+    if (x > a && x < b) return (x - a) / (b - a);
     if (x > c && x < d) return (d - x) / (d - c);
     return 0;
 }
@@ -25,32 +27,43 @@ Membuat fungsi custom untuk menggantikan `fuzz.trimf/trapmf`
 
 ## 2. Fungsi Bantuan Untuk Skala 0-10
 ```js
-// 2. FUNGSI BANTUAN UNTUK GEJALA BERSKALA (0-10)
+// 2. Fungsi Bantuan Untuk Skala 0-10
 function skala_sedang(x) { return trimf(x, 3, 5, 7); }
 function skala_tinggi(x) { return trapmf(x, 6, 8, 10, 10); }
 ```
 Membuat fungsi untuk gejala yang membership fuzzy nya mirip (yang skala 0-10)
 
-## 3. Fungsi Defuzzifikasi
+## 3. Fungsi Hitung Persentase
 ```js
-// 3. FUNGSI DEFUZZIFIKASI (Mencari Persentase Akhir)
+// 3. Fungsi Hitung Persentase
 // Menggunakan metode Sugeno: Tinggi bobotnya 85%, Sedang bobotnya 50%
 function hitungPersentase(bobot_tinggi, bobot_sedang) {
     if (bobot_tinggi === 0 && bobot_sedang === 0) return 0;
     let nilai_tinggi = 85; 
     let nilai_sedang = 50;
+```
+
+```js
     // Rumus Weighted Average (Rata-rata Terbobot)
     let atas = (bobot_tinggi * nilai_tinggi) + (bobot_sedang * nilai_sedang);
     let bawah = bobot_tinggi + bobot_sedang;
     return atas / bawah;
 }
 ```
-Membuat fungsi untuk menghitung menggunakan bobot
+Membuat fungsi untuk menghitung persentase menggunakan weighted average
 
-## 4. Program Utama
+## 4. Fungsi Proses Diagnosa
 ```js
-// 4. PROGRAM UTAMA (Dijalankan saat tombol diklik)
+// 4. Fungsi Proses Diagnosa
 function prosesDiagnosa() {
+    // Cek apakah input valid
+    let form = document.getElementById("formDiagnosa");
+    if (!form.reportValidity()) {
+        return;
+    }
+```
+
+```js
     // Mengambil nilai input dari form HTML
     let g1 = parseFloat(document.getElementById('g1').value) || 0;
     let g2 = parseFloat(document.getElementById('g2').value) || 0;
@@ -63,7 +76,9 @@ function prosesDiagnosa() {
     let g9 = parseFloat(document.getElementById('g9').value) || 0;
     let g10 = parseFloat(document.getElementById('g10').value) || 0;
     let g11 = parseFloat(document.getElementById('g11').value) || 0;
+```
 
+```js
     // Fuzzifikasi Variabel Spesifik
     let g1_sering = trimf(g1, 2, 4, 6);
     let g1_sangat_sering = trapmf(g1, 5, 7, 15, 15);
@@ -74,8 +89,10 @@ function prosesDiagnosa() {
 
     let g4_lama = trapmf(g4, 5, 7, 14, 14);
     let g8_sering = trapmf(g8, 6, 10, 20, 20);
+```
 
-    // Penerapan Aturan Fuzzy (Logika AND diwakili oleh Math.min)
+```js
+    // Penerapan Aturan Fuzzy (Menggunakan Math.min untuk memenuhi aturan AND=min)
     
     // 1. Diare Infeksi
     let diare_tinggi = Math.min(g1_sangat_sering, skala_tinggi(g2), g3_tinggi, g4_lama);
@@ -101,7 +118,9 @@ function prosesDiagnosa() {
     let gastro_tinggi = Math.min(g1_sangat_sering, skala_tinggi(g2), g3_sumeng, skala_tinggi(g11));
     let gastro_sedang = Math.min(g1_sering, skala_sedang(g11));
     let hasil_gastro = hitungPersentase(gastro_tinggi, gastro_sedang);
+```
 
+```js
     // Menyusun hasil ke dalam Array untuk diurutkan
     let daftarHasil = [
         { nama: "Diare Infeksi", persen: hasil_diare },
@@ -110,15 +129,21 @@ function prosesDiagnosa() {
         { nama: "Irritable Bowel Syndrome (IBS)", persen: hasil_ibs },
         { nama: "Gastroenteritis", persen: hasil_gastro }
     ];
+```
 
+```js
     // Urutkan dari yang terbesar ke terkecil
     daftarHasil.sort((a, b) => b.persen - a.persen);
+```
 
+```js
     // Menampilkan Output di HTML
     document.getElementById("judulHasil").style.display = "block";
     let divHasil = document.getElementById("hasilDiagnosa");
     divHasil.innerHTML = ""; // Bersihkan hasil sebelumnya
+```
 
+```js
     let adaHasil = false;
     for (let i = 0; i < daftarHasil.length; i++) {
         if (daftarHasil[i].persen > 0) {
@@ -126,13 +151,14 @@ function prosesDiagnosa() {
             adaHasil = true;
         }
     }
+```
 
+```js
     if (!adaHasil) {
         divHasil.innerHTML = "<p>Gejala terlalu ringan atau tidak ada aturan pakar yang cocok.</p>";
     }
 }
 ```
-Program utama
 
 ## 5. Fungsi Tambahan
 ```js
