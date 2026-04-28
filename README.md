@@ -1,5 +1,5 @@
 # H1D024074-PraktikumKB-Responsi
-<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
+<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
 
 ## 1. Fungsi Membership Fuzzy
 ```js
@@ -52,6 +52,7 @@ function hitungPersentase(bobot_tinggi, bobot_sedang) {
     let nilai_tinggi = 85; 
     let nilai_sedang = 50;
 ```
+Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-10` dari bobot_tinggi dan bobot_sedang
 
 ```js
     // Rumus Weighted Average (Rata-rata Terbobot)
