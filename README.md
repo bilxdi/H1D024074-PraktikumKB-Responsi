@@ -1,5 +1,5 @@
 # H1D024074-PraktikumKB-Responsi
-<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
+<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
 
 ## 1. Fungsi Membership Fuzzy
 ```js
@@ -41,7 +41,7 @@ Jika tidak ada kondisi return `0`
 function skala_sedang(x) { return trimf(x, 3, 5, 7); }
 function skala_tinggi(x) { return trapmf(x, 6, 8, 10, 10); }
 ```
-Membuat fungsi untuk gejala yang membership fuzzy nya mirip (yang skala 0-10)
+Membuat fungsi untuk gejala yang membership fuzzy nya mirip (yang skala 0-10), agar tidak perlu menulis `trimf` dan `trapmf` berkali-kali
 
 ## 3. Fungsi Hitung Persentase
 ```js
