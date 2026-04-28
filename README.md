@@ -1,5 +1,5 @@
 # H1D024074-PraktikumKB-Responsi
-<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
+<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
 
 ## 1. Fungsi Membership Fuzzy
 ```js
@@ -12,6 +12,11 @@ function trimf(x, a, b, c) {
     return 0;
 }
 ```
+Membuat fungsi custom untuk menggantikan `fuzz.trimf`<br>
+Jika diluar segitiga return `0`<br>
+Jika di segitiga naik return `(x - a) / (b - a)`<br>
+Jika di segitiga turun return `(c - x) / (c - b)`<br>
+Jika tidak ada kondisi return `0`
 
 ```js
 // Fungsi Trapesium (Trapmf)
@@ -23,7 +28,12 @@ function trapmf(x, a, b, c, d) {
     return 0;
 }
 ```
-Membuat fungsi custom untuk menggantikan `fuzz.trimf/trapmf`
+Membuat fungsi custom untuk menggantikan `fuzz.trapmf`<br>
+Jika diluar trapesium return `0`<br>
+Jika diatas trapesium return `1`<br>
+Jika di sisi naik return `(x - a) / (b - a)`<br>
+Jika di sisi turun return `(d - x) / (d - c)`<br>
+Jika tidak ada kondisi return `0`
 
 ## 2. Fungsi Bantuan Untuk Skala 0-10
 ```js
