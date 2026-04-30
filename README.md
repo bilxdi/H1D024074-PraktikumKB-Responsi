@@ -1,5 +1,5 @@
 # H1D024074-PraktikumKB-Responsi
-<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
+<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
 
 ## 1. Fungsi Membership Fuzzy
 ```js
@@ -52,7 +52,7 @@ function hitungPersentase(bobot_tinggi, bobot_sedang) {
     let nilai_tinggi = 85; 
     let nilai_sedang = 50;
 ```
-Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-10` dari bobot_tinggi dan bobot_sedang
+Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-10` dari `bobot_tinggi` dan `bobot_sedang`, jika nilai bobot tidak ada return `0`, membuat variabel yang menentukan batas maksimum persentase
 
 ```js
     // Rumus Weighted Average (Rata-rata Terbobot)
@@ -61,7 +61,7 @@ Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-10` dari bobot_
     return atas / bawah;
 }
 ```
-Membuat fungsi untuk menghitung persentase menggunakan weighted average
+Lanjutan dari fungsi `hitungPersentase` untuk menghitung persentase menggunakan Weighted Average berdasarkan bobot dan nilai maks
 
 ## 4. Fungsi Proses Diagnosa
 ```js
@@ -73,6 +73,7 @@ function prosesDiagnosa() {
         return;
     }
 ```
+Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form dari html, kemudian mengecek jika form belum diisi sesuai aturan maka fungsi akan return kosong
 
 ```js
     // Mengambil nilai input dari form HTML
@@ -88,6 +89,7 @@ function prosesDiagnosa() {
     let g10 = parseFloat(document.getElementById('g10').value) || 0;
     let g11 = parseFloat(document.getElementById('g11').value) || 0;
 ```
+Membuat 11 variabel yang menerima masing masing input html dengan id dari masing masing input
 
 ```js
     // Fuzzifikasi Variabel Spesifik
