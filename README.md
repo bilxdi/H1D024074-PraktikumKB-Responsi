@@ -89,7 +89,7 @@ Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form da
     let g10 = parseFloat(document.getElementById('g10').value) || 0;
     let g11 = parseFloat(document.getElementById('g11').value) || 0;
 ```
-Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari masing masing 11 input
+Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari masing masing 11 input, jika tidak ada isi dari masing masing input maka diisi `0`
 
 ```js
     // Fuzzifikasi Variabel Spesifik
