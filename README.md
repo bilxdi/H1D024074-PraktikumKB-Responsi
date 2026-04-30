@@ -52,7 +52,7 @@ function hitungPersentase(bobot_tinggi, bobot_sedang) {
     let nilai_tinggi = 85; 
     let nilai_sedang = 50;
 ```
-Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-10` dari `bobot_tinggi` dan `bobot_sedang`, jika nilai bobot tidak ada return `0`, membuat variabel yang menentukan batas maksimum persentase
+Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-1` dari `bobot_tinggi` dan `bobot_sedang`, jika nilai dari kedua bobot tidak ada maka return `0`, membuat variabel yang menentukan batas maksimum persentase hasil diagnosis
 
 ```js
     // Rumus Weighted Average (Rata-rata Terbobot)
