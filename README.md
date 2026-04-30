@@ -133,7 +133,7 @@ Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10)
     let gastro_sedang = Math.min(g1_sering, skala_sedang(g11));
     let hasil_gastro = hitungPersentase(gastro_tinggi, gastro_sedang);
 ```
-Membuat variabel `tinggi` dan `sedang` yang diisi dengan nilai gejala terendah dari beberapa gejala, `Math.min` digunakan untuk merepresentasikan operator `AND` dimana `AND`=`min`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi `hitungPersentase` yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
+Membuat variabel `tinggi` dan `sedang` dari setiap penyakit yang diisi dengan nilai gejala terendah dari beberapa nilai gejala (setiap variabel penyakit memiliki gejala yang beda beda), `Math.min` digunakan untuk merepresentasikan operator `AND` dimana `AND`=`min`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi `hitungPersentase` yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
 
 ```js
     // Menyusun hasil ke dalam Array untuk diurutkan
