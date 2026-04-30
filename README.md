@@ -103,7 +103,14 @@ Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari mas
     let g4_lama = trapmf(g4, 5, 7, 14, 14);
     let g8_sering = trapmf(g8, 6, 10, 20, 20);
 ```
-Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10)
+Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) untuk variabel yang lain menggunakan fungsi bantuan skala 0-10<br>
+`g1_sering` = segitiga dengan input `g1` dan titik `2, 4, 6`<br>
+`g1_sangat_sering` = trapesium dengan input `g1` dan titik `5, 7, 15, 15`<br>
+`g3_normal` = segitiga dengan input `g3` dan titik `36.0, 36.5, 37.5`<br>
+`g3_sumeng` = segitiga dengan input `g3` dan titik `37.0, 38.0, 39.0`<br>
+`g3_tinggi` = trapesium dengan input `g3` dan titik `38.5, 39.5, 41.0, 41.0`<br>
+`g4_lama` = trapesium dengan input `g4` dan titik `5, 7, 14, 14`<br>
+`g8_sering` = trapesium dengan input `g8` dan titik `6, 10, 20, 20`<br>
 
 ```js
     // Penerapan Aturan Fuzzy (Menggunakan Math.min untuk memenuhi aturan AND=min)
