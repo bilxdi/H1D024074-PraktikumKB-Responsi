@@ -133,7 +133,7 @@ Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10)
     let gastro_sedang = Math.min(g1_sering, skala_sedang(g11));
     let hasil_gastro = hitungPersentase(gastro_tinggi, gastro_sedang);
 ```
-Membuat variabel `tinggi` dan `sedang` yang diisi dengan nilai gejala terendah dari beberapa gejala, digunakan untuk merepresentasikan operator `AND`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi `hitungPersentase` yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
+Membuat variabel `tinggi` dan `sedang` yang diisi dengan nilai gejala terendah dari beberapa gejala, `Math.min` digunakan untuk merepresentasikan operator `AND` dimana `AND`=`min`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi `hitungPersentase` yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
 
 ```js
     // Menyusun hasil ke dalam Array untuk diurutkan
@@ -145,11 +145,13 @@ Membuat variabel `tinggi` dan `sedang` yang diisi dengan nilai gejala terendah d
         { nama: "Gastroenteritis", persen: hasil_gastro }
     ];
 ```
+Membuat array yang berisi dua bagian: `nama` dan `persen`, yang kemudian `nama` sudah diisi secara manual dan `persen` akan diisi dengan persentase dari `hasil` penerapan fuzzy di kode atas yang sudah memanggil fungsi `hitungPersentase`
 
 ```js
     // Urutkan dari yang terbesar ke terkecil
     daftarHasil.sort((a, b) => b.persen - a.persen);
 ```
+Menggunakan `.sort()` untuk mengurutkan array `daftarHasil` bagian `persen` dari terbesar ke kecil, kegunaan dari `((a, b) => b - a)` biasanya digunakan untuk mengurutkan terbesar ke kecil (descending)
 
 ```js
     // Menampilkan Output di HTML
