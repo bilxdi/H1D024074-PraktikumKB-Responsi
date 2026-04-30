@@ -159,6 +159,7 @@ Menggunakan `.sort()` untuk mengurutkan array `daftarHasil` bagian `persen` dari
     let divHasil = document.getElementById("hasilDiagnosa");
     divHasil.innerHTML = ""; // Bersihkan hasil sebelumnya
 ```
+Mengubah display dari elemen html dengan id `judulHasil` menjadi `block`, kemudian membuat variabel bernama `divHasil` yang diisi dengan elemen html dengan id `hasilDiagnosa` , membersihkan hasil dari proses diagnosa yang sebelumnya (jika ada)
 
 ```js
     let adaHasil = false;
@@ -169,6 +170,7 @@ Menggunakan `.sort()` untuk mengurutkan array `daftarHasil` bagian `persen` dari
         }
     }
 ```
+Membuat variabel bernama `adaHasil` dengan isi awal `false`, kemudian looping sepanjang array `daftarHasil`, mengecek isi array yang sedang di loop bagian `persen` nya apakah lebih dari 0%, jika lebih dari 0% maka ubah elemen `divHasil` dengan `nama` dan `persen` dari isi yang sedang di loop, kemudia set `adaHasil` menjadi `true`
 
 ```js
     if (!adaHasil) {
@@ -176,6 +178,7 @@ Menggunakan `.sort()` untuk mengurutkan array `daftarHasil` bagian `persen` dari
     }
 }
 ```
+Jika `adaHasil` itu tetap `false` setelah melewati loop diatas maka ubah elemen dari `divHasil` dengan konfirmasi bahwa tidak ada hasil
 
 ## 5. Fungsi Tambahan
 ```js
