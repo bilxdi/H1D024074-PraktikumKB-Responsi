@@ -191,4 +191,4 @@ function scrollToBottom() {
     });
     }
 ```
-Membuat fungsi untuk keperluan lain lain (diluar program utama)
+Membuat fungsi bernama `scrollToBottom` yang kemudian menjalankan metode yang meng-scroll ke spesifik koordinat yang disini adalah `top`, `top` diisi dengan seluruh tinggi dari halaman yang membuat saat discroll akan ke bawah halaman, kemudian mengubah behavior dari scroll menjadi smooth
