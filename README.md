@@ -1,5 +1,5 @@
 # H1D024074-PraktikumKB-Responsi
-<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
+<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
 
 ## 1. Fungsi Membership Fuzzy
 ```js
