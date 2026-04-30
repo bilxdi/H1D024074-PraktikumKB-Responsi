@@ -151,7 +151,7 @@ Membuat array yang berisi dua bagian: `nama` dan `persen`, yang kemudian `nama` 
     // Urutkan dari yang terbesar ke terkecil
     daftarHasil.sort((a, b) => b.persen - a.persen);
 ```
-Menggunakan `.sort()` untuk mengurutkan array `daftarHasil` bagian `persen` dari terbesar ke kecil, kegunaan dari `((a, b) => b - a)` biasanya digunakan untuk mengurutkan terbesar ke kecil (descending)
+Menggunakan `sort((a, b) => b.persen - a.persen)` untuk mengurutkan array `daftarHasil` bagian `persen` dari terbesar ke kecil, kegunaan dari `((a, b) => b - a)` biasanya digunakan untuk mengurutkan terbesar ke kecil (descending)
 
 ```js
     // Menampilkan Output di HTML
