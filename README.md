@@ -89,7 +89,7 @@ Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form da
     let g10 = parseFloat(document.getElementById('g10').value) || 0;
     let g11 = parseFloat(document.getElementById('g11').value) || 0;
 ```
-Membuat 11 variabel yang menerima masing masing input html dengan id dari masing masing input
+Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari masing masing 11 input
 
 ```js
     // Fuzzifikasi Variabel Spesifik
@@ -103,6 +103,7 @@ Membuat 11 variabel yang menerima masing masing input html dengan id dari masing
     let g4_lama = trapmf(g4, 5, 7, 14, 14);
     let g8_sering = trapmf(g8, 6, 10, 20, 20);
 ```
+Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10)
 
 ```js
     // Penerapan Aturan Fuzzy (Menggunakan Math.min untuk memenuhi aturan AND=min)
@@ -132,6 +133,7 @@ Membuat 11 variabel yang menerima masing masing input html dengan id dari masing
     let gastro_sedang = Math.min(g1_sering, skala_sedang(g11));
     let hasil_gastro = hitungPersentase(gastro_tinggi, gastro_sedang);
 ```
+Membuat variabel `tinggi` dan `sedang` yang diisi dengan nilai gejala terendah dari beberapa gejala, digunakan untuk merepresentasikan operator `AND`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi `hitungPersentase` yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
 
 ```js
     // Menyusun hasil ke dalam Array untuk diurutkan
