@@ -1,5 +1,5 @@
 # H1D024074-PraktikumKB-Responsi
-<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
+<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
 
 ## 1. Fungsi Membership Fuzzy
 ### trimf
@@ -174,7 +174,7 @@ Menggunakan `sort((a, b) => b.persen - a.persen)` untuk mengurutkan array [`daft
     let divHasil = document.getElementById("hasilDiagnosa");
     divHasil.innerHTML = ""; // Bersihkan hasil sebelumnya
 ```
-Mengubah display dari elemen html dengan id `judulHasil` menjadi `block`, kemudian membuat variabel bernama `divHasil` yang diisi dengan elemen html dengan id `hasilDiagnosa` , membersihkan hasil dari proses diagnosa yang sebelumnya (jika ada)
+Mengubah display dari elemen html dengan id `judulHasil` menjadi `block`, kemudian membuat variabel bernama `divHasil` yang diisi dengan elemen html dengan id `hasilDiagnosa`, membersihkan hasil dari proses diagnosa yang sebelumnya (jika ada)
 
 ```js
     let adaHasil = false;
