@@ -1,7 +1,8 @@
 # H1D024074-PraktikumKB-Responsi
-<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
+<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
 
 ## 1. Fungsi Membership Fuzzy
+### trimf
 ```js
 // 1. Fungsi Membership Fuzzy
 // Fungsi Segitiga (Trimf)
@@ -18,6 +19,7 @@ Jika di segitiga naik return `(x - a) / (b - a)`<br>
 Jika di segitiga turun return `(c - x) / (c - b)`<br>
 Jika tidak ada kondisi return `0`
 
+### trapmf
 ```js
 // Fungsi Trapesium (Trapmf)
 function trapmf(x, a, b, c, d) {
@@ -41,7 +43,7 @@ Jika tidak ada kondisi return `0`
 function skala_sedang(x) { return trimf(x, 3, 5, 7); }
 function skala_tinggi(x) { return trapmf(x, 6, 8, 10, 10); }
 ```
-Membuat fungsi untuk gejala yang membership fuzzy nya mirip (yang skala 0-10), agar tidak perlu menulis `trimf` dan `trapmf` berkali-kali
+Membuat fungsi untuk gejala yang membership fuzzy nya mirip (yang skala 0-10), agar tidak perlu menulis [`trimf`](#trimf) dan [`trapmf`](#trapmf) berkali-kali
 
 ## 3. Fungsi Hitung Persentase
 ```js
@@ -61,7 +63,7 @@ Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-1` dari `bobot_
     return atas / bawah;
 }
 ```
-Lanjutan dari fungsi `hitungPersentase` untuk menghitung persentase menggunakan Weighted Average berdasarkan bobot dan nilai maks
+Lanjutan dari fungsi [`hitungPersentase`](#3-fungsi-hitung-persentase) untuk menghitung persentase menggunakan Weighted Average berdasarkan bobot dan nilai maks
 
 ## 4. Fungsi Proses Diagnosa
 ```js
