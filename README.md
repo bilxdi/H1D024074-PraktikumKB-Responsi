@@ -77,6 +77,7 @@ function prosesDiagnosa() {
 ```
 Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form dari html, kemudian mengecek jika form belum diisi sesuai aturan maka fungsi akan return kosong
 
+### input
 ```js
     // Mengambil nilai input dari form HTML
     let g1 = parseFloat(document.getElementById('g1').value) || 0;
@@ -93,6 +94,7 @@ Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form da
 ```
 Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari masing masing 11 input, jika tidak ada isi dari masing masing input maka diisi `0`
 
+### fuzzifikasi spesifik
 ```js
     // Fuzzifikasi Variabel Spesifik
     let g1_sering = trimf(g1, 2, 4, 6);
@@ -105,7 +107,7 @@ Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari mas
     let g4_lama = trapmf(g4, 5, 7, 14, 14);
     let g8_sering = trapmf(g8, 6, 10, 20, 20);
 ```
-Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) untuk variabel yang lain menggunakan fungsi bantuan skala 0-10<br>
+Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) untuk variabel yang lain menggunakan [fungsi bantuan](#2-fungsi-bantuan-untuk-skala-0-10) skala 0-10<br>
 `g1_sering` = segitiga dengan input `g1` dan titik `2, 4, 6`<br>
 `g1_sangat_sering` = trapesium dengan input `g1` dan titik `5, 7, 15, 15`<br>
 `g3_normal` = segitiga dengan input `g3` dan titik `36.0, 36.5, 37.5`<br>
@@ -114,6 +116,8 @@ Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) u
 `g4_lama` = trapesium dengan input `g4` dan titik `5, 7, 14, 14`<br>
 `g8_sering` = trapesium dengan input `g8` dan titik `6, 10, 20, 20`<br>
 
+
+### aturan fuzzy
 ```js
     // Penerapan Aturan Fuzzy (Menggunakan Math.min untuk memenuhi aturan AND=min)
     
@@ -142,8 +146,9 @@ Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) u
     let gastro_sedang = Math.min(g1_sering, skala_sedang(g11));
     let hasil_gastro = hitungPersentase(gastro_tinggi, gastro_sedang);
 ```
-Membuat variabel `tinggi` dan `sedang` dari setiap penyakit yang diisi dengan nilai gejala terendah dari beberapa nilai gejala (setiap variabel penyakit memiliki gejala yang beda beda), `Math.min` digunakan untuk merepresentasikan operator `AND` dimana `AND`=`min`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi `hitungPersentase` yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
+Membuat variabel `tinggi` dan `sedang` dari setiap penyakit yang diisi dengan nilai gejala terendah dari beberapa nilai gejala (setiap variabel penyakit memiliki gejala yang beda beda), `Math.min` digunakan untuk merepresentasikan operator `AND` dimana `AND`=`min`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi [`hitungPersentase`](#3-fungsi-hitung-persentase) yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
 
+### daftarhasil
 ```js
     // Menyusun hasil ke dalam Array untuk diurutkan
     let daftarHasil = [
@@ -154,14 +159,15 @@ Membuat variabel `tinggi` dan `sedang` dari setiap penyakit yang diisi dengan ni
         { nama: "Gastroenteritis", persen: hasil_gastro }
     ];
 ```
-Membuat array yang berisi dua bagian: `nama` dan `persen`, yang kemudian `nama` sudah diisi secara manual dan `persen` akan diisi dengan persentase dari `hasil` penerapan fuzzy di kode atas yang sudah memanggil fungsi `hitungPersentase`
+Membuat array yang berisi dua bagian: `nama` dan `persen`, yang kemudian `nama` sudah diisi secara manual dan `persen` akan diisi dengan persentase dari `hasil_` penerapan fuzzy di kode atas yang sudah memanggil fungsi [`hitungPersentase`](#3-fungsi-hitung-persentase)
 
 ```js
     // Urutkan dari yang terbesar ke terkecil
     daftarHasil.sort((a, b) => b.persen - a.persen);
 ```
-Menggunakan `sort((a, b) => b.persen - a.persen)` untuk mengurutkan array `daftarHasil` bagian `persen` dari terbesar ke kecil, kegunaan dari `((a, b) => b - a)` biasanya digunakan untuk mengurutkan terbesar ke kecil (descending)
+Menggunakan `sort((a, b) => b.persen - a.persen)` untuk mengurutkan array [`daftarHasil`](#daftarhasil) bagian `persen` dari terbesar ke kecil, kegunaan dari `((a, b) => b - a)` biasanya digunakan untuk mengurutkan terbesar ke kecil (descending)
 
+### output
 ```js
     // Menampilkan Output di HTML
     document.getElementById("judulHasil").style.display = "block";
@@ -179,7 +185,7 @@ Mengubah display dari elemen html dengan id `judulHasil` menjadi `block`, kemudi
         }
     }
 ```
-Membuat variabel bernama `adaHasil` dengan isi awal `false`, kemudian looping sepanjang array `daftarHasil`, mengecek isi array yang sedang di loop bagian `persen` nya apakah lebih dari 0%, jika lebih dari 0% maka ubah elemen `divHasil` dengan `nama` dan `persen` dari isi yang sedang di loop, kemudia set `adaHasil` menjadi `true`
+Membuat variabel bernama `adaHasil` dengan isi awal `false`, kemudian looping sepanjang array [`daftarHasil`](#daftarhasil), mengecek isi array yang sedang di loop bagian `persen` nya apakah lebih dari 0%, jika lebih dari 0% maka ubah elemen `divHasil` dengan `nama` dan `persen` dari isi yang sedang di loop, kemudia set `adaHasil` menjadi `true`
 
 ```js
     if (!adaHasil) {
