@@ -2,11 +2,12 @@
 <!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
 
 ## Tentang
-Sebuah Sistem Pakar Fuzzy untuk mendiagnosis penyakit pencernaan, berguna untuk pengguna yang ingin sistem pakar yang ringan, offline, dan tanpa perlu install (hanya perlu browser), yang mungkin dapat membantu dalam menemukan apa yang diderita (walaupun setidaknya sedikit). Dibuat untuk memenuhi tugas responsi Praktikum Kecerdasan Buatan
+Sebuah Sistem Pakar Fuzzy untuk mendiagnosis penyakit pencernaan, berguna untuk pengguna yang ingin sistem pakar yang ringan, offline, dan tanpa perlu install (hanya perlu browser (yang HTML)), yang mungkin dapat membantu dalam menemukan apa yang diderita (walaupun setidaknya sedikit). Dibuat untuk memenuhi tugas responsi Praktikum Kecerdasan Buatan
 
-## Penjelasan Kode (html)
-### 1. Fungsi Membership Fuzzy
-#### trimf
+## Versi HTML
+### Penjelasan Kode (html)
+#### 1. Fungsi Membership Fuzzy
+##### trimf
 ```js
 // 1. Fungsi Membership Fuzzy
 // Fungsi Segitiga (Trimf)
@@ -23,7 +24,7 @@ Jika di segitiga naik return `(x - a) / (b - a)`<br>
 Jika di segitiga turun return `(c - x) / (c - b)`<br>
 Jika tidak ada kondisi return `0`
 
-#### trapmf
+##### trapmf
 ```js
 // Fungsi Trapesium (Trapmf)
 function trapmf(x, a, b, c, d) {
@@ -41,7 +42,7 @@ Jika di sisi naik return `(x - a) / (b - a)`<br>
 Jika di sisi turun return `(d - x) / (d - c)`<br>
 Jika tidak ada kondisi return `0`
 
-### 2. Fungsi Bantuan Untuk Skala 0-10
+#### 2. Fungsi Bantuan Untuk Skala 0-10
 ```js
 // 2. Fungsi Bantuan Untuk Skala 0-10
 function skala_sedang(x) { return trimf(x, 3, 5, 7); }
@@ -49,7 +50,7 @@ function skala_tinggi(x) { return trapmf(x, 6, 8, 10, 10); }
 ```
 Membuat fungsi untuk gejala yang membership fuzzy nya mirip (yang skala 0-10), agar tidak perlu menulis [`trimf`](#trimf) dan [`trapmf`](#trapmf) berkali-kali
 
-### 3. Fungsi Hitung Persentase
+#### 3. Fungsi Hitung Persentase
 ```js
 // 3. Fungsi Hitung Persentase
 // Menggunakan metode Sugeno: Tinggi bobotnya 85%, Sedang bobotnya 50%
@@ -69,7 +70,7 @@ Membuat fungsi bernama `hitungPersentase` yang menerima angka `0-1` dari `bobot_
 ```
 Lanjutan dari fungsi [`hitungPersentase`](#3-fungsi-hitung-persentase) untuk menghitung persentase menggunakan Weighted Average berdasarkan bobot dan nilai maks
 
-### 4. Fungsi Proses Diagnosa
+#### 4. Fungsi Proses Diagnosa
 ```js
 // 4. Fungsi Proses Diagnosa
 function prosesDiagnosa() {
@@ -81,7 +82,7 @@ function prosesDiagnosa() {
 ```
 Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form dari html, kemudian mengecek jika form belum diisi sesuai aturan maka fungsi akan return kosong
 
-#### input
+##### input
 ```js
     // Mengambil nilai input dari form HTML
     let g1 = parseFloat(document.getElementById('g1').value) || 0;
@@ -98,7 +99,7 @@ Membuat fungsi bernama `prosesDiagnosa`, membuat variabel yang menyimpan form da
 ```
 Membuat 11 variabel yang menerima masing masing 11 input html dengan id dari masing masing 11 input, jika tidak ada isi dari masing masing input maka diisi `0`
 
-#### fuzzifikasi spesifik
+##### fuzzifikasi spesifik
 ```js
     // Fuzzifikasi Variabel Spesifik
     let g1_sering = trimf(g1, 2, 4, 6);
@@ -121,7 +122,7 @@ Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) u
 `g8_sering` = trapesium dengan input `g8` dan titik `6, 10, 20, 20`<br>
 
 
-#### aturan fuzzy
+##### aturan fuzzy
 ```js
     // Penerapan Aturan Fuzzy (Menggunakan Math.min untuk memenuhi aturan AND=min)
     
@@ -152,7 +153,7 @@ Membuat membership fuzzy untuk variabel yang lebih spesifik (tidak skala 0-10) u
 ```
 Membuat variabel `tinggi` dan `sedang` dari setiap penyakit yang diisi dengan nilai gejala terendah dari beberapa nilai gejala (setiap variabel penyakit memiliki gejala yang beda beda), `Math.min` digunakan untuk merepresentasikan operator `AND` dimana `AND`=`min`, kemudian membuat variabel hasil yang diisi dengan hasil dari memanggil fungsi [`hitungPersentase`](#3-fungsi-hitung-persentase) yang diisi dengan `tinggi` dan `sedang` (`bobot_tinggi` dan `bobot_sedang`)
 
-#### daftarhasil
+##### daftarhasil
 ```js
     // Menyusun hasil ke dalam Array untuk diurutkan
     let daftarHasil = [
@@ -171,7 +172,7 @@ Membuat array yang berisi dua bagian: `nama` dan `persen`, yang kemudian `nama` 
 ```
 Menggunakan `sort((a, b) => b.persen - a.persen)` untuk mengurutkan array [`daftarHasil`](#daftarhasil) bagian `persen` dari terbesar ke kecil, kegunaan dari `((a, b) => b - a)` biasanya digunakan untuk mengurutkan terbesar ke kecil (descending)
 
-#### output
+##### output
 ```js
     // Menampilkan Output di HTML
     document.getElementById("judulHasil").style.display = "block";
@@ -199,7 +200,7 @@ Membuat variabel bernama `adaHasil` dengan isi awal `false`, kemudian looping se
 ```
 Jika `adaHasil` itu tetap `false` setelah melewati loop diatas maka ubah elemen dari `divHasil` dengan konfirmasi bahwa tidak ada hasil
 
-### 5. Fungsi Tambahan
+#### 5. Fungsi Tambahan
 ```js
 // 5. FUNGSI TAMBAHAN (Untuk lain-lain)
 // Fungsi scroll ke bawah
