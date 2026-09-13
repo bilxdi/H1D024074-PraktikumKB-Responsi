@@ -5,7 +5,8 @@
 Sebuah Sistem Pakar Fuzzy untuk mendiagnosis penyakit pencernaan, berguna untuk pengguna yang ingin sistem pakar yang ringan, offline, dan tanpa perlu install (hanya perlu browser (yang HTML)), yang mungkin dapat membantu dalam menemukan apa yang diderita (walaupun setidaknya sedikit). Dibuat untuk memenuhi tugas responsi Praktikum Kecerdasan Buatan
 
 ## Versi HTML
-### Penjelasan Kode (html)
+Link kode: [pakarfuzzycerna.html](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/pakarfuzzycerna.html)
+### Penjelasan Kode (js)
 #### 1. Fungsi Membership Fuzzy
 ##### trimf
 ```js
@@ -214,6 +215,7 @@ function scrollToBottom() {
 Membuat fungsi bernama `scrollToBottom` yang kemudian menjalankan metode yang meng-scroll ke spesifik koordinat yang disini adalah `top`, `top` diisi dengan seluruh tinggi dari halaman yang membuat saat discroll akan ke bawah halaman, kemudian mengubah behavior dari scroll menjadi smooth
 
 ## Versi Python
+Link kode: [pakarfuzzycerna.py](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/pakarfuzzycerna.py)
 ### Instalasi
 1. Install `numpy` dan `scikit-fuzzy`
 ```bash
