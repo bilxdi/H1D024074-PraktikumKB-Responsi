@@ -1,22 +1,24 @@
 :root {
     --bg-color: white;
     --text-color: black;
-    --input-text-color: ;
-    --input-bg-color: ;
-    --input-border-color: ;
-    --btn-bg-color: ;
-    --btn-text-color: ;
+    --input-text-color: black;
+    --input-bg-color: white;
+    --input-border-color: black;
+    --btn-bg-color: white;
+    --btn-text-color: black;
+    --btn-border-color: black;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 [data-theme="dark"] {
     --bg-color: #1f1f1f;
     --text-color: #e0e0e0;
-    --input-text-color: ;
-    --input-bg-color: ;
-    --input-border-color: ;
-    --btn-bg-color: ;
-    --btn-text-color: ;
+    --input-text-color: #e0e0e0;
+    --input-bg-color: #1f1f1f;
+    --input-border-color: #e0e0e0;
+    --btn-bg-color: #1f1f1f;
+    --btn-text-color: #e0e0e0;
+    --btn-border-color: #e0e0e0;
 }
 
 body {
@@ -26,12 +28,21 @@ body {
 }
 
 input {
-    color: var(--input-text-color);
     background-color: var(--input-bg-color);
+    color: var(--input-text-color);
     border: 1px solid var(--input-border-color);
+}
+
+input:focus {
+    border-radius: 2px;
 }
 
 button {
     background-color: var(--btn-bg-color);
     color: var(--btn-text-color);
+    border: 1px solid var(--btn-border-color);
+}
+
+button:focus {
+    border-radius: 2px;
 }
