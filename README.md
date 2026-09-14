@@ -1,12 +1,13 @@
 # H1D024074-PraktikumKB-Responsi
-<!-- <meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html"> -->
+<meta http-equiv="refresh" content="0; URL=https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/pakarfuzzycerna.html">
 
 ## Tentang
 Sebuah Sistem Pakar Fuzzy untuk mendiagnosis penyakit pencernaan, berguna untuk pengguna yang ingin sistem pakar yang ringan, offline, dan tanpa perlu install (hanya perlu browser (yang HTML)), yang mungkin dapat membantu dalam menemukan apa yang diderita (walaupun setidaknya sedikit). Dibuat untuk memenuhi tugas responsi Praktikum Kecerdasan Buatan
 
 ## Versi HTML
-Link kode: [pakarfuzzycerna.html](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/pakarfuzzycerna.html)
+Link HTML: [pakarfuzzycerna.html](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/pakarfuzzycerna.html)
 ### Penjelasan Kode (js)
+Link kode: [script.js](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/script.js)
 #### 1. Fungsi Membership Fuzzy
 ##### trimf
 ```js
@@ -213,6 +214,33 @@ function scrollToBottom() {
     }
 ```
 Membuat fungsi bernama `scrollToBottom` yang kemudian menjalankan metode yang meng-scroll ke spesifik koordinat yang disini adalah `top`, `top` diisi dengan seluruh tinggi dari halaman yang membuat saat discroll akan ke bawah halaman, kemudian mengubah behavior dari scroll menjadi smooth
+
+### Dokumentasi (html)
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="docs/1.png" alt="Ekskul2025-1"><br>
+        <b>Form Light</b>
+      </td>
+      <td align="center">
+        <img src="docs/2.png" alt="Ekskul2025-2"><br>
+        <b>Form Dark</b>
+      </td>
+    </tr>
+    <tr">
+      <td align="center">
+        <img src="docs/3.png" alt="Ekskul2025-3"><br>
+        <b>Hasil Light</b>
+      </td>
+      <td align="center">
+        <img src="docs/4.png" alt="Ekskul2025-3"><br>
+        <b>Hasil Dark</b>
+      </td>
+    </tr>
+  </table>
+</p>
+
 
 ## Versi Python
 Link kode: [pakarfuzzycerna.py](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/pakarfuzzycerna.py)
