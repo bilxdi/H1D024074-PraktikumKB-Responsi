@@ -1,3 +1,30 @@
+// Target the theme switch button
+const toggleBtn = document.getElementById('theme-toggle');
+
+// Check for saved theme preference, otherwise check system preferences
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Determine initial theme state
+const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+// Apply initial theme on load
+document.documentElement.setAttribute('data-theme', initialTheme);
+
+// Handle click event to toggle theme
+toggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    let newTheme = 'light';
+    
+    if (currentTheme === 'light') {
+        newTheme = 'dark';
+    }
+    
+    // Apply changes to DOM and persist to localStorage
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+})
+
 // 1. FUNGSI MEMBERSHIP FUZZY (Matematika Dasar)
 // Fungsi Segitiga (Trimf)
 function trimf(x, a, b, c) {
