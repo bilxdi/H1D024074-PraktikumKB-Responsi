@@ -4,6 +4,8 @@
 ## Tentang
 Sebuah Sistem Pakar Fuzzy untuk mendiagnosis penyakit pencernaan, berguna untuk pengguna yang ingin sistem pakar yang ringan, offline, dan tanpa perlu install (hanya perlu browser (yang HTML)), yang mungkin dapat membantu dalam menemukan apa yang diderita (walaupun setidaknya sedikit). Dibuat untuk memenuhi tugas responsi Praktikum Kecerdasan Buatan
 
+Link Pages: [Sistem Diagnosa Pencernaan](https://bilxdi.github.io/H1D024074-PraktikumKB-Responsi/)
+
 ## Versi HTML
 Link HTML: [pakarfuzzycerna.html](https://github.com/bilxdi/H1D024074-PraktikumKB-Responsi/blob/main/pakarfuzzycerna.html)
 ### Penjelasan Kode (js)
